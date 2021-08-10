@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
 module.exports = app;
 
 /* Do not change the following line! It is required for testing and allowing
