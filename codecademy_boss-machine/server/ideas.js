@@ -1,5 +1,7 @@
 const ideasRouter = require('express').Router();
 
+const checkMillionDollarIdea = require('./checkMillionDollarIdea');
+
 module.exports = ideasRouter;
 
 const {
@@ -27,7 +29,7 @@ ideasRouter.get('/', (req, res, next) => {
 })
 
 //post new idea
-ideasRouter.post('/', (req, res, next) => {
+ideasRouter.post('/', checkMillionDollarIdea, (req, res, next) => {
     const newIdea = addToDatabase('ideas', req.body);
     res.status(201).send(newIdea);
 })
